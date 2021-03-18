@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Songs List
+    </title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><h1>Song List</h1></th>
+            </tr>
+        <br>
+        </thead>
+        <tbody>
+            {% for file_name,file in music_files.items %}
+                <tr>
+                    <td><a href="{% url 'play_music' file %}">{{file_name}}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+</table>
+</body>
+</html>
