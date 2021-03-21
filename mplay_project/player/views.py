@@ -12,8 +12,18 @@ from .utils import (
     play_previous_song
 )
 
-def MusicListView(request):
 
+def HomeView(request):
+    """
+    View for Home page of app.
+    """
+    return render(request, 'homepage.html', {})
+
+
+def MusicListView(request):
+    """
+    View for music listing.
+    """
     context = dict()
     media_path = settings.MEDIA_ROOT
     music_files = { os.path.splitext(f)[0]: f for f in listdir(media_path)}
@@ -22,7 +32,9 @@ def MusicListView(request):
 
 
 def MusicPlayView(request, *args, **kwargs):
-
+    """
+    View for music playback and controls.
+    """
     name = kwargs.get('name')
     media_path = settings.MEDIA_ROOT
     file_path = join(media_path, name)
