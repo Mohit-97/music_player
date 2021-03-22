@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Song Playback Screen
+    </title>
+</head>
+<body>
+    <button id="previous">Previous</button>
+    <button id="pause">Pause</button>
+    <button id="unpause" hidden=true>Resume</button>
+    <button id="next">Next</button>
+</body>
+<script type="text/javascript" src="{{ STATIC_URL }} /static/jquery-3.6.0.js"></script>
+<script src="{% static '/song_playback.js' %}"></script>
+</html>
